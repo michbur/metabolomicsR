@@ -71,6 +71,11 @@ Source
 
 Run App
 
+# Konfiguracja środowiska R
+
+## Instalacja R
+
+
 # peakPantheR
 
 ## Dlaczego peakPantheR?
