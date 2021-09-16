@@ -6,8 +6,6 @@ library(ggplot2)
 library(grid)
 library(gridExtra)
 
-dat <- readRDS("example_data.RDS")
-
 create_dend <- function(x, col_name1, col_name2) {
     pivot_wider(x, names_from = c(col_name2),
                 values_from = "value") %>%
@@ -75,17 +73,36 @@ plot_dendrogram <- function(dendro) {
                          labels = labels(dendro))
 }
 
-dat_dend1 <- create_dend(dat, "x1", "x2")
-dat_dend2 <- create_dend(dat, "x2", "x1")
 
-dendro_top <- plot_dendrogram(dat_dend1)
-dendro_right <- plot_dendrogram(dat_dend2) + coord_flip()
+files <- list.files(path = "./data", pattern = "\\.RDS$", full.names = TRUE)
 
-hm <- ggplot(dat, aes(x1, x2, z = value, fill= as.factor(value))) +
-    geom_tile(color="black") +
-    scale_fill_discrete(name = "value")
+ldf <- lapply(1:length(files), function(ith_file) {
+
+    print(paste("Dane", ith_file))
+
+    dat <- readRDS(files[ith_file])
+    nm <- colnames(dat)
+
+    dat_dend1 <- create_dend(dat, nm[1], nm[2])
+    dat_dend2 <- create_dend(dat, nm[2], nm[1])
+
+    dendro_top <- plot_dendrogram(dat_dend1)
+    dendro_right <- plot_dendrogram(dat_dend2) + coord_flip()
+
+    hm <- ggplot(dat, aes(dat[, 1], dat[, 2], z = dat[, 3], fill= as.factor(dat[, 3]))) +
+        geom_tile(color="black") +
+        scale_fill_discrete(name = nm[3]) +
+        xlab(nm[1]) +
+        ylab(nm[2])
+
+    plt <- arrange_dendrogram(hm + theme_bw() + theme(legend.position = "bottom"),
+                              dendro_top + theme_void(), dendro_right + theme_void())
+
+    path <- paste0(substring(files[ith_file], first = 1, last = nchar(files[ith_file]) - 3), "png")
+    ggsave(path, plt, device = "png", width = 10, height = 10)
+
+})
 
 
-arrange_dendrogram(hm + theme_bw() + theme(legend.position = "bottom"),
-                   dendro_top + theme_void(), dendro_right + theme_void())
+print("Skrypt wykonany!")
 
