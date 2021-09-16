@@ -10,13 +10,13 @@ output:
 
 <style>
 slides > slide {
-  font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
 
 }
 
@@ -33,15 +33,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <div style="float: left; width: 50%; font-size:20px;">
 
- - Matematyk (ze specjalnością analiza danych),
- - Miłośniczka **R** i proteomiki,
- - uwielbia wspinaczkę.
- 
+- Matematyk (ze specjalnością analiza danych),
+- Miłośniczka **R** i proteomiki,
+- uwielbia wspinaczkę.
+
 </div>
 
 <div style="float: right; width: 50%;">
 
-<img src="figures/krysia.jpg" height="90%" width="90%" class="center"/>
+<img src="figures/krysia.png" height="80%" width="80%" class="center"/>
 
 </div>
 
@@ -75,6 +75,71 @@ Run App
 
 ## Instalacja R
 
+[https://cran.r-project.org/](https://cran.r-project.org/)
+
+<img src="figures/cran.png" height="90%" width="100%" class="center"/>
+
+
+## Instalacja RStudio
+
+[https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+
+<img src="figures/rstudio.png" height="90%" width="63%" class="center"/>
+
+
+## Instalacja pakietów
+
+### Za pomocą kodu:
+
+$$\\[0.1in]$$
+
+```{r, eval = FALSE}
+
+
+install.packages("data.table")
+
+remove.packages("data.table")
+
+
+```
+
+
+##
+
+### W RStudio
+
+
+<img src="figures/pckg1.png" height="100%" width="100%" class="center"/>
+
+##
+
+<img src="figures/pckg2.png" height="60%" width="60%" class="center"/>
+
+##
+
+### Odinstalowywanie pakietów w RStudio
+
+<img src="figures/pckg3.png" height="60%" width="100%" class="center"/>
+
+## Ładowanie pakietów
+
+### Za pomocą kodu:
+
+$$\\[0.1in]$$
+
+```{r}
+library(data.table)
+
+detach("package:data.table", unload = TRUE)
+
+```
+
+##
+
+### W RStudio
+
+<img src="figures/lib.png" height="100%" width="100%" class="center"/>
+
 
 # peakPantheR
 
@@ -87,9 +152,9 @@ Run App
 
 
 <div style="float: left; width: 50%; font-size:20px;">
- - **jest 3x R**,
- - jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
- - jest bardzo aktywnie wspierany.
+- **jest 3x R**,
+- jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
+- jest bardzo aktywnie wspierany.
 </div>
 
 <div style="float: right; width: 50%;">
@@ -103,9 +168,9 @@ Run App
 
 
 <div style="float: left; width: 50%; font-size:20px;">
- - jest 3x R,
- - **jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu**,
- - jest bardzo aktywnie wspierany.
+- jest 3x R,
+- **jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu**,
+- jest bardzo aktywnie wspierany.
 </div>
 
 <div style="float: right; width: 40%;">
@@ -125,9 +190,9 @@ library(peakPantheR)
 
 
 <div style="float: left; width: 50%; font-size:20px;">
- - jest 3x R,
- - jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
- - **jest bardzo aktywnie wspierany**.
+- jest 3x R,
+- jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
+- **jest bardzo aktywnie wspierany**.
 </div>
 
 <div style="float: right; width: 50%;">
