@@ -6,6 +6,8 @@ install.packages("BiocManager")
 
 BiocManager::install("phenomecentre/peakPantheR")
 
+# można też BiocManager::install("phenomecentre/peakPantheR") - jaka jest różnica?
+
 # ładujemy peakPantheR
 
 library(peakPantheR)

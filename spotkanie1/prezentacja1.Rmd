@@ -45,6 +45,32 @@ knitr::opts_chunk$set(echo = TRUE)
 
 </div>
 
+# 3x R
+
+## Dlaczego 3x R?
+
+Pracować w R możemy na trzy różne sposoby.
+
+1. Pisać skrypty od początku.
+2. Wykorzystywać gotowe funkcje.
+3. Używać GUI w Shiny.
+
+## Pisać skrypty od początku
+
+[Link do kodu](https://github.com/michbur/metabolomicsR/blob/master/spotkanie1/kod.R).
+
+## Wykorzystywać gotowe funkcje
+
+<img src="figures/funkcje.png" height="90%" width="90%" class="center"/>
+
+Source
+
+## Używać GUI w Shiny
+
+<img src="figures/shiny.png" height="90%" width="90%" class="center"/>
+
+Run App
+
 # peakPantheR
 
 ## Dlaczego peakPantheR?
@@ -107,6 +133,7 @@ library(peakPantheR)
 
 <img src="figures/activity.png" height="90%" width="90%" class="center"/>
 
+
 ## Instalacja peakPantheRa
 
 ```{r,eval=FALSE}
@@ -117,7 +144,7 @@ install.packages("BiocManager")
 
 # instalacja peakPantheR
 
-BiocManager::install("phenomecentre/peakPantheR")
+BiocManager::install("peakPantheR")
 
 # ładujemy peakPantheR
 
