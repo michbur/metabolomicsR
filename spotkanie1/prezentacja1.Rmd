@@ -1,0 +1,48 @@
+---
+title: 'Spotkanie 1: 3x R'
+author: "Michał Burdukiewicz, Krystyna Grzesiak"
+output: 
+  ioslides_presentation:
+    theme: "simplex"
+---
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+slides > slide {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Wstęp
+
+## Krystyna Grzesiak
+
+<div style="float: left; width: 50%; font-size:20px;">
+
+ - Matematyk (ze specjalnością analiza danych),
+ - Miłośniczka **R** i proteomiki,
+ - uwielbia wspinaczkę.
+ 
+</div>
+
+<div style="float: right; width: 50%;">
+<img src="figures/krysia.jpg" height="90%" width="90%" class="center"/>
+</div>
+
+
+
+
