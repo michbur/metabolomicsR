@@ -40,9 +40,91 @@ knitr::opts_chunk$set(echo = TRUE)
 </div>
 
 <div style="float: right; width: 50%;">
+
 <img src="figures/krysia.jpg" height="90%" width="90%" class="center"/>
+
+</div>
+
+# peakPantheR
+
+## Dlaczego peakPantheR?
+
+<img src="figures/peakPantheR_article.png" height="90%" width="90%" class="center"/>
+
+
+## Dlaczego peakPantheR?
+
+
+<div style="float: left; width: 50%; font-size:20px;">
+ - **jest 3x R**,
+ - jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
+ - jest bardzo aktywnie wspierany.
+</div>
+
+<div style="float: right; width: 50%;">
+
+<img src="figures/peakPantheR.png" height="90%" width="90%" class="center"/>
+
 </div>
 
 
+## Dlaczego peakPantheR?
 
 
+<div style="float: left; width: 50%; font-size:20px;">
+ - jest 3x R,
+ - **jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu**,
+ - jest bardzo aktywnie wspierany.
+</div>
+
+<div style="float: right; width: 40%;">
+
+```{r,eval=FALSE}
+
+install.packages("BiocManager")
+BiocManager::install("phenomecentre/peakPantheR")
+library(peakPantheR)
+
+```
+
+</div>
+
+
+## Dlaczego peakPantheR?
+
+
+<div style="float: left; width: 50%; font-size:20px;">
+ - jest 3x R,
+ - jest paczką Bioconductora, które wymaga nieco więcej wysiłku przy instalacji niż paczki z CRANu,
+ - **jest bardzo aktywnie wspierany**.
+</div>
+
+<div style="float: right; width: 50%;">
+
+</div>
+
+## Rozwój peakPantheRa
+
+<img src="figures/activity.png" height="90%" width="90%" class="center"/>
+
+## Instalacja peakPantheRa
+
+```{r,eval=FALSE}
+
+# instalacja BiocManager, niezbędny aby wykorzystywać paczki z Bioconductora
+
+install.packages("BiocManager")
+
+# instalacja peakPantheR
+
+BiocManager::install("phenomecentre/peakPantheR")
+
+# ładujemy peakPantheR
+
+library(peakPantheR)
+
+# uruchamiamy GUI
+
+peakPantheR_start_GUI(browser = TRUE)
+
+```
