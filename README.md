@@ -10,9 +10,11 @@
 
 | Data  | R                                        | Metabolomika             |
 |-------|------------------------------------------|--------------------------|
-| DD.MM | Trzy poziomy R. Konfiguracja środowiska. | peakPantheR              |
-| DD.MM | Zarządzanie kodem w R.                   | peakPantheR              |
-| DD.MM | Pakiety w R.                             | xcms (nie ten)           |
-| DD.MM | Gramatyka grafiki.                       | xcms (nie ten)           |
-| DD.MM | Zaawansowane wizualizacje danych.        | Heatmapy jak w XCMS Plus |
-| DD.MM | Zaawansowane wizualizacje danych.        | METASPACE                |
+| 17.09 | Trzy poziomy R. Konfiguracja środowiska. | peakPantheR              |
+| 24.09 | Zarządzanie kodem w R.                   | peakPantheR              |
+| 01.10 | Pakiety w R.                             | xcms (version >= 3)      |
+| 08.10 | Wczytywanie i manipulowanie danymi       | xcms (version >= 3)      |
+| 15.10 | Gramatyka grafiki.                       | xcms (version >= 3)      |
+| 22.10 | Zaawansowane wizualizacje danych.        | Heatmapy jak w XCMS Plus |
+| 29.10 | Zaawansowane wizualizacje danych.        | METASPACE                |
+| 05.11 | Zaawansowane wizualizacje danych.        | METASPACE                |
