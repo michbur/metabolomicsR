@@ -6,7 +6,7 @@ library(ggplot2)
 library(grid)
 library(gridExtra)
 
-dat <- readRDS("example_data.RDS")
+dat <- read.csv("spotkanie1/data/example_data.csv")
 
 create_dend <- function(x, col_name1, col_name2) {
     pivot_wider(x, names_from = c(col_name2),

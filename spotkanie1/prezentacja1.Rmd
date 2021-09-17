@@ -27,23 +27,44 @@ slides > slide {
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Wstęp
+# Wprowadzenie
+
+## Repozytorium
+
+https://github.com/michbur/metabolomicsR
+
+## Plan pracy
+
+| Data  | R                                        | Metabolomika             |
+|-------|------------------------------------------|--------------------------|
+| 17.09 | Trzy poziomy R. Konfiguracja środowiska. | peakPantheR              |
+| 24.09 | Zarządzanie kodem w R.                   | peakPantheR              |
+| 01.10 | Pakiety w R.                             | xcms (version >= 3)      |
+| 08.10 | Wczytywanie i manipulowanie danymi       | xcms (version >= 3)      |
+| 15.10 | Gramatyka grafiki.                       | xcms (version >= 3)      |
+| 22.10 | Zaawansowane wizualizacje danych.        | Heatmapy jak w XCMS Plus |
+| 29.10 | Zaawansowane wizualizacje danych.        | METASPACE                |
+| 05.11 | Zaawansowane wizualizacje danych.        | METASPACE                |
 
 ## Krystyna Grzesiak
 
 <div style="float: left; width: 50%; font-size:20px;">
 
- - Matematyk (ze specjalnością analiza danych),
- - Miłośniczka **R** i proteomiki,
- - uwielbia wspinaczkę.
- 
+- Matematyk (ze specjalnością analiza danych),
+- Miłośniczka **R** i proteomiki,
+- uwielbia wspinaczkę i Czarka.
+
+<img src="figures/czarek.png" height="60%" width="60%" class="center"/>
+
 </div>
 
 <div style="float: right; width: 50%;">
 
-<img src="figures/krysia.jpg" height="90%" width="90%" class="center"/>
+<img src="figures/krysia.png" height="80%" width="80%" class="center"/>
 
 </div>
+
+
 
 # 3x R
 
@@ -74,6 +95,64 @@ Run App
 # Konfiguracja środowiska R
 
 ## Instalacja R
+
+[https://cran.r-project.org/](https://cran.r-project.org/)
+
+<img src="figures/cran.png" height="90%" width="100%" class="center"/>
+
+
+## Instalacja RStudio
+
+[https://www.rstudio.com/products/rstudio/download/](https://www.rstudio.com/products/rstudio/download/)
+
+<img src="figures/rstudio.png" height="90%" width="63%" class="center"/>
+
+
+## Instalacja pakietów
+
+### Za pomocą kodu:
+
+$$\\[0.1in]$$
+
+```{r, eval = FALSE}
+install.packages("data.table")
+remove.packages("data.table")
+```
+
+
+##
+
+### W RStudio
+
+
+<img src="figures/pckg1.png" height="100%" width="100%" class="center"/>
+
+##
+
+<img src="figures/pckg2.png" height="60%" width="60%" class="center"/>
+
+##
+
+### Odinstalowywanie pakietów w RStudio
+
+<img src="figures/pckg3.png" height="60%" width="100%" class="center"/>
+
+## Ładowanie pakietów
+
+### Za pomocą kodu:
+
+$$\\[0.1in]$$
+
+```{r}
+library(data.table)
+detach("package:data.table", unload = TRUE)
+```
+
+##
+
+### W RStudio
+
+<img src="figures/lib.png" height="100%" width="100%" class="center"/>
 
 
 # peakPantheR

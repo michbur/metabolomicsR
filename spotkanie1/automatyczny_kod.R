@@ -80,7 +80,7 @@ ldf <- lapply(1:length(files), function(ith_file) {
 
     print(paste("Dane", ith_file))
 
-    dat <- read.csv(files[ith_file])[-1]
+    dat <- read.csv(files[ith_file])
     nm <- colnames(dat)
 
     dat_dend1 <- create_dend(dat, nm[1], nm[2])
