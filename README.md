@@ -16,5 +16,5 @@
 | 08.10 | Wczytywanie i manipulowanie danymi       | xcms (version >= 3)      |
 | 15.10 | Gramatyka grafiki.                       | xcms (version >= 3)      |
 | 22.10 | Zaawansowane wizualizacje danych.        | Heatmapy jak w XCMS Plus |
-| 29.10 | Zaawansowane wizualizacje danych.        | METASPACE                |
-| 05.11 | Zaawansowane wizualizacje danych.        | METASPACE                |
+| 29.10 | Zaawansowane wizualizacje danych.        |                 |
+| 05.11 | Zaawansowane wizualizacje danych.        |                 |
