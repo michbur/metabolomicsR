@@ -37,7 +37,7 @@ server <- function(input, output, session) {
 
         if (is.null(inFile)) return(NULL)
 
-        read.csv(inFile$datapath)[-1]
+        read.csv(inFile$datapath)
 
     })
 
