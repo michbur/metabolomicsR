@@ -1,0 +1,54 @@
+---
+title: 'Zarządzanie kodem w R'
+author: "Michał Burdukiewicz, Krystyna Grzesiak"
+output: 
+  ioslides_presentation:
+    theme: "simplex"
+---
+
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+<style>
+slides > slide {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Skrypty w R
+
+## Kształt typowego skryptu
+
+1. Wczytanie bibliotek.
+2. Wczytanie dodatkowych skryptów.
+3. Kod.
+
+## Problemy z dzieleniem się skryptami
+
+1. Zmienne środowiskowe:
+  - working directory
+  - options
+  - inne cechy, np. liczba rdzeni
+2. Wersje bibliotek.
+
+# Projekty w RStudio
+
+# renv
+
+## Co to jest renv
+
+## Używanie renv
+
+# Dokumenty w Rmd
