@@ -41,7 +41,8 @@ knitr::opts_chunk$set(echo = TRUE)
   - working directory
   - options
   - inne cechy, np. liczba rdzeni
-2. Wersje bibliotek.
+2. Konflikty nazw.
+3. Wersje bibliotek.
 
 # Projekty w RStudio
 
