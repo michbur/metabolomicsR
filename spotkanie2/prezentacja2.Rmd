@@ -76,7 +76,7 @@ read.csv("dane.csv") # zadziała u Krysi
 
 Zmiana working directory z poziomu Rstudio
 
-<img src="figures/wd.PNG" height="70%" width="70%" class="center"/>
+<img src="figures/wd.png" height="70%" width="70%" class="center"/>
 
   
 ##
@@ -277,9 +277,9 @@ Pakiet służący do zarządzania dependencjami projektów eR-owych.
 
 ##
 
-Renv może być także uruchomiony dla projketu podczas jego tworzenia
+Renv może być także uruchomiony dla projektu podczas jego tworzenia
 
-<img src="figures/renv.PNG" height="70%" width="70%" class="center"/>
+<img src="figures/renv.png" height="70%" width="70%" class="center"/>
 
 
 
