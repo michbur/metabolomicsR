@@ -262,14 +262,14 @@ https://cran.r-project.org/src/contrib/Archive/dplyr/
 
 ### Co to jest renv
 
-Pakiet służący do zarządzania dependencjami projektów eR-owych.
+Pakiet służący do zarządzania pakietami w projektach eR-owych.
 
 ### Używanie renv
 
 
 - **renv::init()** - inicjowanie nowego lokalnego środowiska z prywatną biblioteką eRową.
 
-- normalna praca z projktem - instalowanie i usuwanie pakietów w razie potrzeby
+- normalna praca z projektem - instalowanie i usuwanie pakietów w razie potrzeby
 
 - **renv::snapshot()** - zapisywanie aktualnego stanu biblioteki w projekcie do pliku *renv.lock*
 
