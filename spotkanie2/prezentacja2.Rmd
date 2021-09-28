@@ -39,6 +39,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 3. Kod.
 
+**Czemu w takiej kolejności?**
+
 </div>
 
 <div style="float: right; width: 60%;">
@@ -83,10 +85,6 @@ Zmiana working directory z poziomu Rstudio
   - **options** - funkcja *options()* pozwala użytkownikowi na zmianę różnych opcji opisujących sposób,
   w jaki R liczy oraz wyświetla wyniki. Wywołanie **options()** - zwraca wszystkie obecnie ustawione opcje.
   
-
-Przykłady: 
-
-
  <font size="4.5"> 
  
  - **digits** - ustawia ilość wyświetlanych cyfr znaczących (domyślnie 7) 
@@ -99,6 +97,12 @@ options(digits = 10)
 print(pi)
 
 ```
+
+
+##
+
+  - **options** - funkcja *options()* pozwala użytkownikowi na zmianę różnych opcji opisujących sposób,
+  w jaki R liczy oraz wyświetla wyniki. Wywołanie **options()** - zwraca wszystkie obecnie ustawione opcje.
 
 
  <font size="4.5"> 
@@ -117,7 +121,7 @@ options(warn = 1)
   
 ##
   
-  - **inne cechy**, np. liczba rdzeni
+  - **inne cechy**, np. liczba rdzeni (i inne parametry, które mogą sprawić, że kod, który działał u nas nie zadziała).
   
 ```{r}
 library(parallel)
@@ -234,6 +238,16 @@ https://cran.r-project.org/src/contrib/Archive/dplyr/
 
 # Projekty w RStudio
 
+## Zalety projektów
+
+ - zachowuje working directory,
+ - zachowuje historię,
+ - zachowuje ustawienia RStudio,
+ - zachowuje environment (choć to może też być problem),
+ - personalizowany Rprofile
+ - wraz z renv zachowuje wersje pakietów,
+ - wraz z gitem pozwala kontrolować historię wersji.
+
 ## Tworzenie projektu 
 
 <img src="figures/proj.PNG" height="70%" width="70%" class="center"/>
@@ -253,34 +267,6 @@ https://cran.r-project.org/src/contrib/Archive/dplyr/
 
 <img src="figures/proj3.PNG" height="70%" width="70%" class="center"/>
 
+## Historia
 
-
-
-# renv
-
-##
-
-### Co to jest renv
-
-Pakiet służący do zarządzania pakietami w projektach eR-owych.
-
-### Używanie renv
-
-
-- **renv::init()** - inicjowanie nowego lokalnego środowiska z prywatną biblioteką eRową.
-
-- normalna praca z projektem - instalowanie i usuwanie pakietów w razie potrzeby
-
-- **renv::snapshot()** - zapisywanie aktualnego stanu biblioteki w projekcie do pliku *renv.lock*
-
-- **renv::restore()** - powrót do stanu zapisanego w *renv.lock*
-
-##
-
-Renv może być także uruchomiony dla projektu podczas jego tworzenia
-
-<img src="figures/renv.png" height="70%" width="70%" class="center"/>
-
-
-
-# Dokumenty w Rmd
+## Personalizowany RProfile

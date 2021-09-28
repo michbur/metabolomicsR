@@ -1,0 +1,132 @@
+---
+title: "Przykładowy dokument"
+author: Krystyna Grzesiak
+date: 24.04.2021
+output:
+  pdf_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set()
+
+library(dplyr)
+library(ggplot2)
+
+```
+
+# Jak pisać raporty w Markdownie?
+
+W tym raporcie znajdują się zagadnienia
+
+1.  Podstawy podstaw
+
+2. Jak załączyć kod do raportu
+
+3. Jak dodać wykres
+
+
+## 1. Podstawy podstaw
+
+
+Poniższa lista nie jest numerowana
+
+- *Ten tekst jest napisany kursywą*.
+
+- **Ten tekst jest pogrubiony**
+
+- `Tutaj jest napisany kod`
+
+- Tutaj jest znak matematyczny $\beta$, a poniżej znajduje się wyeksponowany wzór matematyczny 
+$$FWER =P(\exists i\notin \text{supp}(\beta) \text{ such that } \hat{\beta}_i(\lambda_0) \neq 0)$$
+napisany przy użyciu składni Latexowej.
+
+Poniższy tekst także jest wyeksponowany:
+
+> Uwaga: To bardzo ważny tekst.
+
+Kolejnym sposobem na listowanie obiektów jest użycie listy 'tasków':
+
+- [ ] kupić 2kg ziemniaków
+- [ ] przeczytać dokumentację pakietu `ggplot2`
+- [x] napisać przykładowy dokument
+
+## 2. Jak załączyć kod do raportu
+
+Umieszczenie kodu w raporcie jest bardzo proste. Zapisujemy go w tak zwanym chunku, 
+to znaczy pomiędzy   `` ```{r}`` oraz `` ``` ``. Można go utworzyć za pomocą skrótu klawiszowego Ctrl + Alt + i.
+
+Poniżej znajduje się wczytanie ramki danych.
+
+```{r}
+## wczytywanie danych
+iris_data <- read.csv2("iris.csv", header = TRUE) 
+```
+
+
+W tekście także można wywoływać kod eRowy odnoszący się do istniejących już obiektów (utworzonych w chunkach). Stąd możemy napisać, że liczba wierszy w naszej ramce danych wynosi `r nrow(iris_data)`.
+
+Tutaj następuje przejście do następnej strony za pomocą komendy `\newpage`. 
+\newpage
+
+
+Można także wyświetlić wynik pochodzący z konsoli
+
+```{r}
+head(iris_data)
+```
+
+Za pomocą funkcji `kable` z pakietu `knitr` możemy wygenerować automatyczną i elegancką tabelkę:
+
+```{r}
+knitr::kable(head(iris_data), caption = "Irysy")
+```
+
+
+
+
+Za pomocą zmiany parametrów w chunku możemy decydować o tym jak, i czy, wyniki i kod będą generowane do raportu. 
+Podstawowe przydatne parametry to:
+
+- echo - wyświetlanie kodów
+- results - wyświetlanie wyników
+- message, warning, error - wyświetlanie komunikatów z konsoli
+- eval - ewaluacja kodu
+
+Na przykład użycie parametru `echo = FALSE` sprawia, że kod nie jest wyświetlany:
+
+```{r echo = FALSE}
+#tutaj dużo kodu
+a <- 17
+a <- a + a
+print("Ale wyniki są!")
+```
+
+
+a `results = 'hide'`, że wyniki nie są wyświetlane:
+
+```{r results = 'hide'}
+17 + 18
+print("Nie zobaczymy wyniku, a ten print() nie zadziała!")
+```
+
+
+
+
+##  3. Jak dodać wykres
+
+Aby umieścić wykres w raporcie wystarczy utworzyć go w chunku, a w ustawieniach 
+podać parametry, na przykład umiejscowienie i rozmiar:  
+
+```{r, fig.align='center', fig.height=5, fig.width=8}
+
+ggplot(iris_data, aes(x = Petal.Length, y = Petal.Width, col = Species)) +
+  geom_point()
+
+```
+
+
+Strony internetowe są automatycznie konwertowane do linków. Podczas pisania dokumentów w Rmd warto zaglądać tutaj: 
+
+https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf
+
+
