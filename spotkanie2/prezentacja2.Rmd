@@ -10,13 +10,13 @@ output:
 
 <style>
 slides > slide {
-  font-family: 'Montserrat', sans-serif;
+font-family: 'Montserrat', sans-serif;
 }
 
 .center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+display: block;
+margin-left: auto;
+margin-right: auto;
 
 }
 
@@ -33,13 +33,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 <div style="float: left; width: 40%; font-size:20px;">
 
-1. Wczytanie bibliotek.\
-
-2. Wczytanie dodatkowych skryptów.\
-
+1. Wczytanie bibliotek.
++ jest to potrzebne do używania znajdujących się w nich funkcji 
++ wypisanie bibliotek na początku pomaga nowej osobie w sprawnej ich instalacji
+2. Wczytanie dodatkowych skryptów.
++ w dodatkowych skryptach mogą być funkcje, z których chcemy później korzystać
 3. Kod.
 
-**Czemu w takiej kolejności?**
 
 </div>
 
@@ -56,10 +56,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 1. Zmienne środowiskowe:
 
-  
-    - **working directory** - bezwzględna ścieżka na komputerze prowadząca do domyślnej lokalizacji plików wczytywanych do R lub zapisywanych z R
-  
-  
+
+- **working directory** - bezwzględna ścieżka na komputerze prowadząca do domyślnej lokalizacji plików wczytywanych do R lub zapisywanych z R
+
+
 ```{r, eval = FALSE}
 # sciezka bezwzgledna na danym urzadzeniu - zadziała tylko u Michala
 read.csv("C:/Michal/projekt/dane.csv")
@@ -80,66 +80,88 @@ Zmiana working directory z poziomu Rstudio
 
 <img src="figures/wd.png" height="70%" width="70%" class="center"/>
 
-  
+
 ##
-  - **options** - funkcja *options()* pozwala użytkownikowi na zmianę różnych opcji opisujących sposób,
-  w jaki R liczy oraz wyświetla wyniki. Wywołanie **options()** - zwraca wszystkie obecnie ustawione opcje.
-  
- <font size="4.5"> 
- 
- - **digits** - ustawia ilość wyświetlanych cyfr znaczących (domyślnie 7) 
- 
- </font>
+**options** - funkcja *options()* pozwala użytkownikowi na zmianę różnych opcji opisujących sposób,
+w jaki R liczy oraz wyświetla wyniki. Wywołanie **options()** - zwraca wszystkie obecnie ustawione opcje.
+
+
+
+## Przykład 1 - cyfry znaczące
+
+<font size="4.5"> 
+
+- **digits** - ustawia ilość wyświetlanych cyfr znaczących (domyślnie 7) 
+
+</font>
 
 
 ```{r}
 options(digits = 10)
 print(pi)
 
+options(digits = 3)
+print(pi)
 ```
 
+## Przykład 2 - warningi i errory
 
-##
+- warning - informacja dla użytkownika (np. o możliwym błędzie), nie przerywa działania funkcji 
 
-  - **options** - funkcja *options()* pozwala użytkownikowi na zmianę różnych opcji opisujących sposób,
-  w jaki R liczy oraz wyświetla wyniki. Wywołanie **options()** - zwraca wszystkie obecnie ustawione opcje.
+- error - błąd, w wyniku którego działanie funkcji zostaje przerwane
+
+<font size="4.5"> 
+
+- **warn** - liczbą całkowitą określamy sposób obchodzenia się z warningami (warn < 0 - wszystkie warningi są ignorowane, warn = 0 - warningi są wyświetlane kiedy funkcja zwróci ostateczny wynik, warn = 1 - warningi są wyświetlane na bieżąco, warn > 1 - warningi są traktowane jak errory)
+
+</font>
 
 
- <font size="4.5"> 
- 
- - **warn** - liczbą całkowitą określamy sposób obchodzenia się z warningami (warn < 0 - wszystkie warningi są ignorowane, warn = 0 - warningi są wyświetlane kiedy funkcja zwróci ostateczny wynik, warn = 1 - warningi są wyświetlane na bieżąco, warn > 1 - warningi są traktowane jak errory)
- 
- </font>
-
-  
-```{r, eval = FALSE}
+```{r}
 
 options(warn = 1)
+warning("Hello, it is a warning!")
+
+options(warn = -1)
+warning("Hello, it is an ignored warning!")
+
 ```
 
 
-  
+
+
 ##
-  
-  - **inne cechy**, np. liczba rdzeni (i inne parametry, które mogą sprawić, że kod, który działał u nas nie zadziała).
-  
+
+- **inne cechy**, np. liczba rdzeni (i inne parametry, które mogą sprawić, że kod, który działał u nas nie zadziała).
+
+<font size="4.5"> 
+
 ```{r}
 library(parallel)
-
 detectCores()
 ```
-  
+
+
+```{r}
+l <- list(A = rnorm(10), B = rnorm(100))
+
+mclapply(l, function(vec) {
+  mean(vec)
+}, mc.cores = 4)
+```
+</font>
+
 ##
 
 2. Konflikty nazw.
 
- <font size="4.5"> 
- 
+<font size="4.5"> 
+
 Zdarza się, że nazwy obiektów pokrywają się pomiędzy różnymi pakietami. 
 
 Przykład: funkcja *filter()* z pakietów *dplyr* i *stats*.
- 
- </font>
+
+</font>
 
 
 
@@ -151,22 +173,22 @@ library(dplyr)
 ```
 
 ##
- <font size="4.5"> 
- 
+<font size="4.5"> 
+
 Wywołując teraz funkcję *filter()* użyjemy funkcji z pakietu dplyr - do filtrowania ramek danych
- 
- </font>
+
+</font>
 
 
 ```{r}
 filter(iris, Sepal.Length == 5.1, Sepal.Width == 3.5)
 ```
 
- <font size="4.5"> 
+<font size="4.5"> 
 
 Możemy sprecyzować pakiet, z którego chcemy importować konkretną funkcję. W przypadku pakietu *stats* i funkcji *filter()* zrobimy to następująco:
- 
- </font>
+
+</font>
 
 ```{r}
 
@@ -183,8 +205,8 @@ stats::filter(x, rep(1, 3))
 <font size="4.5"> 
 
 Biblioteki w R są ciągle ulepszane, więc warto precyzować wersję biblioteki, w której kod działa poprawnie. Na przykład:
- 
- </font>
+
+</font>
 
 ```{r, eval = FALSE}
 example_list <- list(iris, iris)
@@ -198,7 +220,7 @@ print("Error: 'rbind_list' is not an exported object from 'namespace:dplyr'")
 <font size="4.5"> 
 W najnowszych wersjach pakietu *dplyr* funkcję *rbind_list()* zastąpiła funkcja *bind_rows()*. 
 
- </font>
+</font>
 
 ```{r, eval = FALSE}
 dplyr::bind_rows(example_list) #działa
@@ -233,20 +255,20 @@ install.packages(url, repos=NULL, type="source")
 
 https://cran.r-project.org/src/contrib/Archive/dplyr/
 
- </font>
+</font>
 
 
 # Projekty w RStudio
 
 ## Zalety projektów
 
- - zachowuje working directory,
- - zachowuje historię,
- - zachowuje ustawienia RStudio,
- - zachowuje environment (choć to może też być problem),
- - personalizowany Rprofile
- - wraz z renv zachowuje wersje pakietów,
- - wraz z gitem pozwala kontrolować historię wersji.
+- zachowuje working directory,
+- zachowuje historię,
+- zachowuje ustawienia RStudio,
+- zachowuje environment (choć to może też być problem),
+- personalizowany Rprofile
+- wraz z renv zachowuje wersje pakietów,
+- wraz z gitem pozwala kontrolować historię wersji.
 
 ## Tworzenie projektu 
 
@@ -267,6 +289,12 @@ https://cran.r-project.org/src/contrib/Archive/dplyr/
 
 <img src="figures/proj3.PNG" height="70%" width="70%" class="center"/>
 
+## Globalne środowisko
+
+<img src="figures/env.png" height="90%" width="90%" class="center"/>
+
 ## Historia
+
+<img src="figures/hist.png" height="90%" width="90%" class="center"/>
 
 ## Personalizowany RProfile
