@@ -298,3 +298,5 @@ https://cran.r-project.org/src/contrib/Archive/dplyr/
 <img src="figures/hist.png" height="90%" width="90%" class="center"/>
 
 ## Personalizowany RProfile
+
+.RProfile to miejsce, gdzie składujemy wszystkie zmienne odpowiedzialne za konfigurację lokalnego środowiska (np. wartości dla options).
