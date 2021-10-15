@@ -1,0 +1,77 @@
+---
+title: "Wonderful html world of RMarkdown"
+output:
+  html_document
+---
+
+<style type="text/css">
+body{ /* Normal  */
+  font-size: 14px;
+}
+td {  /* Table  */
+   font-size: 12px;
+}
+h1 { /* Header 1 */
+ font-size: 24px;
+ color: darkBlue;
+}
+h2 { /* Header 2 */
+ font-size: 20px;
+ color: darkBlue;
+}
+h3 { /* Header 3 */
+ font-size: 18px;
+ color: darkBlue;
+}
+h4 { /* Header 4 */
+ font-size: 16px;
+ color: darkBlue;
+}
+code.r{ /* Code block */
+  font-size: 12px;
+  white-space:pre !important;
+  overflow-x:scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+pre { /* Code block */
+  font-size: 12px;
+  white-space:pre !important;
+  overflow-x:scroll !important;
+  word-break: keep-all !important;
+  word-wrap: initial !important;
+}
+
+</style>
+
+# Przykład
+
+```{r}
+set.seed(15390)
+
+x <- 1L:5
+y <- 1L:5
+
+plot(x, y)
+```
+
+
+# Tabele {.tabset}
+
+## Normalna tabela
+
+```{r}
+iris
+```
+
+## Elegancka tabela
+
+```{r}
+library(DT)
+
+datatable(iris, extensions = 'Buttons', 
+          filter = "top", rownames = FALSE, #style = "bootstrap",
+          options = list(dom = "Brtip",
+                         buttons = c("copy", "csv", "excel", "print")))
+
+```

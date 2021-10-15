@@ -35,16 +35,57 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Pakiet służący do zarządzania pakietami w projektach eR-owych.
 
-## Używanie renv
+- przykładowe repozytorium: https://github.com/KrystynaGrzesiak/renv_example
 
+## Używanie renv 
 
 - **renv::init()** - inicjowanie nowego lokalnego środowiska z prywatną biblioteką eRową.
 
-- normalna praca z projektem - instalowanie i usuwanie pakietów w razie potrzeby
+
+
+<div style="float: left; width: 50%; font-size:20px;">
+<img src="figures/init.PNG" height="100%" width=100%" class="center"/>
+
+<img src="figures/lib.PNG" height="100%" width=100%" class="center"/>
+</div>
+<div style="float: right; width: 45%; font-size:20px;">
+<img src="figures/lock1.PNG" height="70%" width="100%" class="center"/>
+</div>
+
+
+
+##
+
+- **renv::install()** normalna praca z projektem - instalowanie i usuwanie pakietów w razie potrzeby
+
+Przykładowo instalujemy konkretną (archiwalną) wersję pakietu *ggplot2*:
+
+```{r, eval = FALSE}
+url <- "https://cran.r-project.org/src/contrib/Archive/ggplot2/ggplot2_3.3.3.tar.gz"
+renv::install(url, repos=NULL, type="source")
+```
+
+<img src="figures/ggplot.PNG" height="100%" width=100%" class="center"/>
+
+
+##
 
 - **renv::snapshot()** - zapisywanie aktualnego stanu biblioteki w projekcie do pliku *renv.lock*
 
+<div style="float: left; width: 50%; font-size:20px;">
+<img src="figures/snapshot.PNG" height="100%" width=90%" class="center"/>
+</div>
+<div style="float: right; width: 50%; font-size:20px;">
+<img src="figures/lock2.PNG" height="90%" width="100%" class="center"/>
+</div>
+
+##
+
 - **renv::restore()** - powrót do stanu zapisanego w *renv.lock*
+
+<img src="figures/restore.PNG" height="100%" width=70%" class="center"/>
+
+
 
 ##
 
@@ -55,3 +96,11 @@ Renv może być także uruchomiony dla projektu podczas jego tworzenia
 
 
 # Dokumenty w Rmd
+
+## Zobacz:
+
+- Dokument_w_Rmd.Rmd
+
+- piekny_html.Rmd
+
+- prezentacja3.Rmd
