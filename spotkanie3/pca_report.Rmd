@@ -1,0 +1,42 @@
+---
+title: "PCA"
+author: "Michał Burdukiewicz"
+date: "3 12 2021"
+output: html_document
+---
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
+library(dplyr)
+library(ggplot2)
+
+df <- read.csv("data.csv")
+
+do_pca <- function(x)
+    x %>%
+    select(-gr) %>%
+    prcomp(center = TRUE, scale = TRUE)
+
+mutate_pca <- function(x, df)
+    getElement(x, "x") %>%
+    data.frame() %>%
+    select(1, 2) %>%
+    cbind(select(df, gr), .)
+
+plot_pca <- function(x)
+    ggplot(x, aes(x = PC1, y = PC2, color = gr, shape = gr, fill = gr, linetype = gr)) +
+    geom_density_2d(color = "black", contour = TRUE) +
+    geom_point() +
+    stat_density2d(aes(fill = gr, alpha = ..level..), color = "black",
+                   contour = TRUE, geom = "polygon") +
+    scale_linetype_discrete("") +
+    scale_fill_discrete("") +
+    scale_alpha_continuous(range = c(0.35, 1)) +
+    guides(alpha = FALSE)
+
+pca_res <- do_pca(df) 
+
+mutate_pca(pca_res, df) %>% 
+    plot_pca
+
+summary(pca_res)
+```

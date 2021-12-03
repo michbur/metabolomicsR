@@ -28,7 +28,6 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-
 # renv
 
 ## Co to jest renv
@@ -94,8 +93,7 @@ Renv może być także uruchomiony dla projektu podczas jego tworzenia
 <img src="figures/renv.png" height="70%" width="70%" class="center"/>
 
 
-
-# Dokumenty w Rmd
+# Automatyczne raporty
 
 ## Zobacz:
 
